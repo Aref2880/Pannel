@@ -1,6 +1,4 @@
-# TX-ThemeHub
 
-TX-UI Panel Subscription Page Templates Designed By TX Community.
 
 ## Quick Install
 
