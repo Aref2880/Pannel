@@ -1,8 +1,10 @@
+# X-UI Custom Themes Collection
 
+A collection of beautiful, responsive custom HTML themes for X-UI subscription panels. Transform your subscription page with professionally designed themes that support RTL languages and modern UI components.
 
 ## Quick Install
 
-you can install pre-designed user themes as your sub custom ui using below command in terminal:
+You can install pre-designed user themes as your sub custom ui using below command in terminal:
 ```bash
 bash <(curl -Ls https://raw.githubusercontent.com/AghayeCoder/tx-themehub/master/install.sh)
 ```
