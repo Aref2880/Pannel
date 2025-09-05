@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Customer, CustomerFormData, FilterOptions } from '../types';
+import type { Customer, CustomerFormData, FilterOptions } from '../types';
 import { formatPersianDate, formatCurrency, formatPersianNumber, getCustomerStatusColor, debounce } from '../utils/helpers';
 import CustomerForm from './CustomerForm';
 
@@ -39,7 +39,7 @@ const CustomerManagement: React.FC<CustomerManagementProps> = ({
       filtered = filtered.filter(customer => 
         customer.name.toLowerCase().includes(searchLower) ||
         customer.email.toLowerCase().includes(searchLower) ||
-        customer.phone.includes(filters.searchTerm) ||
+        customer.phone.includes(filters.searchTerm || '') ||
         customer.address.toLowerCase().includes(searchLower)
       );
     }
@@ -208,13 +208,13 @@ const CustomerManagement: React.FC<CustomerManagementProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="card">
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary-600">{formatPersianNumber(customers.length)}</div>
+            <div className="text-2xl font-bold text-blue-600">{formatPersianNumber(customers.length)}</div>
             <div className="text-sm text-gray-600">کل مشتریان</div>
           </div>
         </div>
         <div className="card">
           <div className="text-center">
-            <div className="text-2xl font-bold text-success-600">
+            <div className="text-2xl font-bold text-green-600">
               {formatPersianNumber(customers.filter(c => c.status === 'active').length)}
             </div>
             <div className="text-sm text-gray-600">مشتریان فعال</div>
@@ -222,7 +222,7 @@ const CustomerManagement: React.FC<CustomerManagementProps> = ({
         </div>
         <div className="card">
           <div className="text-center">
-            <div className="text-2xl font-bold text-warning-600">
+            <div className="text-2xl font-bold text-amber-600">
               {formatPersianNumber(customers.filter(c => c.status === 'inactive').length)}
             </div>
             <div className="text-sm text-gray-600">غیرفعال</div>
@@ -230,7 +230,7 @@ const CustomerManagement: React.FC<CustomerManagementProps> = ({
         </div>
         <div className="card">
           <div className="text-center">
-            <div className="text-2xl font-bold text-danger-600">
+            <div className="text-2xl font-bold text-red-600">
               {formatPersianNumber(customers.filter(c => c.status === 'suspended').length)}
             </div>
             <div className="text-sm text-gray-600">معلق</div>
@@ -287,13 +287,13 @@ const CustomerManagement: React.FC<CustomerManagementProps> = ({
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEditCustomer(customer)}
-                          className="text-primary-600 hover:text-primary-800 text-sm"
+                          className="text-blue-600 hover:text-blue-800 text-sm"
                         >
                           ویرایش
                         </button>
                         <button
                           onClick={() => handleDeleteCustomer(customer.id)}
-                          className="text-danger-600 hover:text-danger-800 text-sm"
+                          className="text-red-600 hover:text-red-800 text-sm"
                         >
                           حذف
                         </button>

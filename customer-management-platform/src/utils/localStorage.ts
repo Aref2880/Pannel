@@ -1,4 +1,4 @@
-import { Customer, Service, Notification } from '../types';
+import type { Customer, Service, Notification } from '../types';
 
 const STORAGE_KEYS = {
   CUSTOMERS: 'customerManagement_customers',

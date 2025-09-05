@@ -60,11 +60,11 @@ export const isServiceExpired = (endDate: string): boolean => {
 export const getServiceStatusColor = (status: string): string => {
   switch (status) {
     case 'active':
-      return 'success';
+      return 'green';
     case 'expired':
-      return 'danger';
+      return 'red';
     case 'pending':
-      return 'warning';
+      return 'amber';
     case 'cancelled':
       return 'gray';
     default:
@@ -75,11 +75,11 @@ export const getServiceStatusColor = (status: string): string => {
 export const getCustomerStatusColor = (status: string): string => {
   switch (status) {
     case 'active':
-      return 'success';
+      return 'green';
     case 'inactive':
-      return 'warning';
+      return 'amber';
     case 'suspended':
-      return 'danger';
+      return 'red';
     default:
       return 'gray';
   }

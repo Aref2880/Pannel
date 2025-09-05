@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Customer, CustomerFormData } from '../types';
+import type { Customer, CustomerFormData } from '../types';
 import { validateEmail, validatePhone, cleanPhoneNumber } from '../utils/helpers';
 
 interface CustomerFormProps {
@@ -117,7 +117,7 @@ const CustomerForm: React.FC<CustomerFormProps> = ({ customer, onSubmit, onCance
                 placeholder="نام کامل مشتری"
               />
               {errors.name && (
-                <p className="mt-1 text-sm text-danger-600">{errors.name}</p>
+                <p className="mt-1 text-sm text-red-600">{errors.name}</p>
               )}
             </div>
 
@@ -134,7 +134,7 @@ const CustomerForm: React.FC<CustomerFormProps> = ({ customer, onSubmit, onCance
                 dir="ltr"
               />
               {errors.email && (
-                <p className="mt-1 text-sm text-danger-600">{errors.email}</p>
+                <p className="mt-1 text-sm text-red-600">{errors.email}</p>
               )}
             </div>
 
@@ -151,7 +151,7 @@ const CustomerForm: React.FC<CustomerFormProps> = ({ customer, onSubmit, onCance
                 dir="ltr"
               />
               {errors.phone && (
-                <p className="mt-1 text-sm text-danger-600">{errors.phone}</p>
+                <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
               )}
             </div>
 
@@ -167,7 +167,7 @@ const CustomerForm: React.FC<CustomerFormProps> = ({ customer, onSubmit, onCance
                 rows={3}
               />
               {errors.address && (
-                <p className="mt-1 text-sm text-danger-600">{errors.address}</p>
+                <p className="mt-1 text-sm text-red-600">{errors.address}</p>
               )}
             </div>
 

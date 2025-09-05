@@ -70,7 +70,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, onPageChange, no
               }}
               className={`w-full flex items-center justify-between px-6 py-3 text-right transition-colors duration-200 ${
                 currentPage === item.page
-                  ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-600'
+                  ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-600'
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               }`}
             >

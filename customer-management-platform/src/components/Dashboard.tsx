@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Customer, Service, DashboardStats } from '../types';
+import type { Customer, Service, DashboardStats } from '../types';
 import { formatCurrency, formatPersianNumber, getDaysUntilExpiry, isServiceExpiringSoon } from '../utils/helpers';
 
 interface DashboardProps {
@@ -67,10 +67,10 @@ const Dashboard: React.FC<DashboardProps> = ({ customers, services }) => {
     change?: string;
   }> = ({ title, value, icon, color, change }) => {
     const colorClasses = {
-      primary: 'bg-primary-500 text-white',
-      success: 'bg-success-500 text-white',
-      warning: 'bg-warning-500 text-white',
-      danger: 'bg-danger-500 text-white'
+      primary: 'bg-blue-500 text-white',
+      success: 'bg-green-500 text-white',
+      warning: 'bg-amber-500 text-white',
+      danger: 'bg-red-500 text-white'
     };
 
     return (
